@@ -6,6 +6,12 @@ public class Board {
 	private Ship[] ships;
 	private int[][] grid;
 	
+	/*
+	 * Board constructor that fills the grid with -1
+	 * and creates an array of Ship objects 
+	 * 
+	 * @param int width, int height
+	 */
 	public Board(int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -22,6 +28,9 @@ public class Board {
 		}
 	}
 	
+	/*
+	 * method that returns a string of the grid
+	 */
 	public String printAll() {
 		String s = "";
 		
@@ -37,6 +46,11 @@ public class Board {
 		return s;
 	}
 
+	/*
+	 * boolean method that adds a ship to the grid, as long as it fits appropriately
+	 * increments the shipNum by one and adds the ship to the Ship array
+	 * @param Ship s, int sx, sy
+	 */
 	public boolean addShip(Ship s, int sx, int sy){
 
         if(shipNum == 10 || sx >= width || sy >= height) {
@@ -57,22 +71,33 @@ public class Board {
         return true;
 	}
 
+	/*
+	 * Getter for the grid matrix
+	 * @return int grid
+	 */
 	public int[][] getGrid() {
 		return grid;
 	}
 
-	
+	/*
+	 * Getter that returns a cell from the grid
+	 * @param int row, int column
+	 * @return grid[row][column]
+	 */
 	public int getCell(int row, int column) {
 		return grid[row][column];
 	}
 	
-	
+	/*
+	 * method returns a boolean to see if a ship was destroyed, or if the user hit the water
+	 * @return int remainingCells
+	 */
 	public boolean checkDestroyedShip(int id) {
 		
 		for(int i = 0; i < shipNum; i++) {
 			if(ships[i].getID() == id) {
 				ships[i].takeHit();
-				if(Ship.getRemainingCells() == 0) {
+				if(ships[i].getRemainingCells() == 0) {
 					return true;
 				}
 				return true;

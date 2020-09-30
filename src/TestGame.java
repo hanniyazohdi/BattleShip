@@ -151,7 +151,6 @@ public class TestGame {
 			System.out.println("Test 8 passed");
 		} else {
 			System.out.println("Test 8 failed");
-			System.out.println(res8);
 		}
 
 
@@ -170,7 +169,6 @@ public class TestGame {
 			System.out.println("Test 9 passed");
 		} else {
 			System.out.println("Test 9 failed");
-			System.out.println(res9);
 		}
 
 		// --------------- Test 10 ---------------

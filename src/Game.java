@@ -45,7 +45,7 @@ public class Game {
 			if(id != -1) {
 				i = 1;  // hit one ship
 				
-			}else if(Ship.getRemainingCells() == 0) {
+			}else if(board.ships[i].getRemainingCells() == 0) {
 				i = 2; // hit whole ship
 				
 			}else if(sunkFleet()) {
